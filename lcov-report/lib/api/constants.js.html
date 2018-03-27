@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lib/api/constants.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">lib/api</a> constants.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>118/118</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>118/118</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { DefaultDraftInlineStyle } from 'draft-js';
+&nbsp;
+// See https://github.com/facebook/draft-js/blob/master/src/model/immutable/DefaultDraftBlockRenderMap.js
+export const BLOCK_TYPE = {
+    // This is used to represent a normal text block (paragraph).
+    UNSTYLED: 'unstyled',
+    HEADER_ONE: 'header-one',
+    HEADER_TWO: 'header-two',
+    HEADER_THREE: 'header-three',
+    HEADER_FOUR: 'header-four',
+    HEADER_FIVE: 'header-five',
+    HEADER_SIX: 'header-six',
+    UNORDERED_LIST_ITEM: 'unordered-list-item',
+    ORDERED_LIST_ITEM: 'ordered-list-item',
+    BLOCKQUOTE: 'blockquote',
+    CODE: 'code-block',
+    // This represents a "custom" block, not for rich text, with arbitrary content.
+    ATOMIC: 'atomic',
+};
+&nbsp;
+export const ENTITY_TYPE = {
+    LINK: 'LINK',
+    IMAGE: 'IMAGE',
+    HORIZONTAL_RULE: 'HORIZONTAL_RULE',
+};
+&nbsp;
+// See https://github.com/facebook/draft-js/blob/master/src/model/immutable/DefaultDraftInlineStyle.js
+export const INLINE_STYLE = {
+    BOLD: 'BOLD',
+    ITALIC: 'ITALIC',
+    CODE: 'CODE',
+    UNDERLINE: 'UNDERLINE',
+    STRIKETHROUGH: 'STRIKETHROUGH',
+    MARK: 'MARK',
+    QUOTATION: 'QUOTATION',
+    SMALL: 'SMALL',
+    SAMPLE: 'SAMPLE',
+    INSERT: 'INSERT',
+    DELETE: 'DELETE',
+    KEYBOARD: 'KEYBOARD',
+    SUPERSCRIPT: 'SUPERSCRIPT',
+    SUBSCRIPT: 'SUBSCRIPT',
+};
+&nbsp;
+export const BLOCK_TYPES = Object.values(BLOCK_TYPE);
+export const ENTITY_TYPES = Object.values(ENTITY_TYPE);
+export const INLINE_STYLES = Object.values(INLINE_STYLE);
+&nbsp;
+export const FONT_FAMILY_MONOSPACE =
+    'Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, sans-serif';
+&nbsp;
+// See https://github.com/facebook/draft-js/blob/master/src/model/immutable/DefaultDraftInlineStyle.js
+export const CUSTOM_STYLE_MAP = {};
+CUSTOM_STYLE_MAP[INLINE_STYLE.BOLD] =
+    DefaultDraftInlineStyle[INLINE_STYLE.BOLD];
+CUSTOM_STYLE_MAP[INLINE_STYLE.ITALIC] =
+    DefaultDraftInlineStyle[INLINE_STYLE.ITALIC];
+CUSTOM_STYLE_MAP[INLINE_STYLE.STRIKETHROUGH] =
+    DefaultDraftInlineStyle[INLINE_STYLE.STRIKETHROUGH];
+CUSTOM_STYLE_MAP[INLINE_STYLE.UNDERLINE] =
+    DefaultDraftInlineStyle[INLINE_STYLE.UNDERLINE];
+&nbsp;
+CUSTOM_STYLE_MAP[INLINE_STYLE.CODE] = {
+    padding: '0.2em 0.3125em',
+    margin: '0',
+    fontSize: '85%',
+    backgroundColor: 'rgba(27, 31, 35, 0.05)',
+    fontFamily: FONT_FAMILY_MONOSPACE,
+    borderRadius: '3px',
+};
+&nbsp;
+CUSTOM_STYLE_MAP[INLINE_STYLE.MARK] = {
+    backgroundColor: 'yellow',
+};
+CUSTOM_STYLE_MAP[INLINE_STYLE.QUOTATION] = {
+    fontStyle: 'italic',
+};
+CUSTOM_STYLE_MAP[INLINE_STYLE.SMALL] = {
+    fontSize: 'smaller',
+};
+CUSTOM_STYLE_MAP[INLINE_STYLE.SAMPLE] = {
+    fontFamily: FONT_FAMILY_MONOSPACE,
+};
+CUSTOM_STYLE_MAP[INLINE_STYLE.INSERT] = {
+    textDecoration: 'underline',
+};
+CUSTOM_STYLE_MAP[INLINE_STYLE.DELETE] = {
+    textDecoration: 'line-through',
+};
+CUSTOM_STYLE_MAP[INLINE_STYLE.KEYBOARD] = {
+    fontFamily: FONT_FAMILY_MONOSPACE,
+    padding: '3px 5px',
+    fontSize: '11px',
+    lineHeight: '10px',
+    color: '#444d56',
+    verticalAlign: 'middle',
+    backgroundColor: '#fafbfc',
+    border: 'solid 1px #c6cbd1',
+    borderBottomColor: '#959da5',
+    borderRadius: '3px',
+    boxShadow: 'inset 0 -1px 0 #959da5',
+};
+CUSTOM_STYLE_MAP[INLINE_STYLE.SUPERSCRIPT] = {
+    fontSize: '80%',
+    verticalAlign: 'super',
+    lineHeight: '1',
+};
+CUSTOM_STYLE_MAP[INLINE_STYLE.SUBSCRIPT] = {
+    fontSize: '80%',
+    verticalAlign: 'sub',
+    lineHeight: '1',
+};
+&nbsp;
+export const BR_TYPE = 'BR';
+&nbsp;
+export const UNDO_TYPE = 'undo';
+export const REDO_TYPE = 'redo';
+&nbsp;
+// Originally from https://github.com/facebook/draft-js/blob/master/src/component/utils/getDefaultKeyBinding.js.
+export const KEY_CODES = {
+    K: 75,
+    B: 66,
+    U: 85,
+    J: 74,
+    I: 73,
+    X: 88,
+    0: 48,
+    1: 49,
+    2: 50,
+    3: 51,
+    4: 52,
+    5: 53,
+    6: 54,
+    7: 55,
+    8: 56,
+    '.': 190,
+    ',': 188,
+};
+&nbsp;
+export const INPUT_BLOCK_MAP = {
+    '* ': BLOCK_TYPE.UNORDERED_LIST_ITEM,
+    '- ': BLOCK_TYPE.UNORDERED_LIST_ITEM,
+    '1. ': BLOCK_TYPE.ORDERED_LIST_ITEM,
+    '# ': BLOCK_TYPE.HEADER_ONE,
+    '## ': BLOCK_TYPE.HEADER_TWO,
+    '### ': BLOCK_TYPE.HEADER_THREE,
+    '#### ': BLOCK_TYPE.HEADER_FOUR,
+    '##### ': BLOCK_TYPE.HEADER_FIVE,
+    '###### ': BLOCK_TYPE.HEADER_SIX,
+    '&gt; ': BLOCK_TYPE.BLOCKQUOTE,
+    // It makes more sense not to require a space here.
+    // This matches how Dropbox Paper operates.
+    '```': BLOCK_TYPE.CODE,
+};
+&nbsp;
+export const INPUT_ENTITY_MAP = {};
+&nbsp;
+INPUT_ENTITY_MAP[ENTITY_TYPE.HORIZONTAL_RULE] = '---';
+&nbsp;
+export const LABELS = {};
+&nbsp;
+LABELS[BLOCK_TYPE.UNSTYLED] = 'P';
+LABELS[BLOCK_TYPE.HEADER_ONE] = 'H1';
+LABELS[BLOCK_TYPE.HEADER_TWO] = 'H2';
+LABELS[BLOCK_TYPE.HEADER_THREE] = 'H3';
+LABELS[BLOCK_TYPE.HEADER_FOUR] = 'H4';
+LABELS[BLOCK_TYPE.HEADER_FIVE] = 'H5';
+LABELS[BLOCK_TYPE.HEADER_SIX] = 'H6';
+LABELS[BLOCK_TYPE.UNORDERED_LIST_ITEM] = 'UL';
+LABELS[BLOCK_TYPE.ORDERED_LIST_ITEM] = 'OL';
+LABELS[BLOCK_TYPE.CODE] = '{ }';
+LABELS[BLOCK_TYPE.BLOCKQUOTE] = '❝';
+&nbsp;
+LABELS[INLINE_STYLE.BOLD] = 'B';
+LABELS[INLINE_STYLE.ITALIC] = '𝘐';
+LABELS[INLINE_STYLE.CODE] = '{ }';
+LABELS[INLINE_STYLE.UNDERLINE] = 'U';
+LABELS[INLINE_STYLE.STRIKETHROUGH] = 'S';
+LABELS[INLINE_STYLE.MARK] = '☆';
+LABELS[INLINE_STYLE.QUOTATION] = '❛';
+LABELS[INLINE_STYLE.SMALL] = '𝖲𝗆a𝗅𝗅';
+LABELS[INLINE_STYLE.SAMPLE] = '𝙳𝚊𝚝𝚊';
+LABELS[INLINE_STYLE.INSERT] = 'Ins';
+LABELS[INLINE_STYLE.DELETE] = 'Del';
+LABELS[INLINE_STYLE.SUPERSCRIPT] = 'Sup';
+LABELS[INLINE_STYLE.SUBSCRIPT] = 'Sub';
+LABELS[INLINE_STYLE.KEYBOARD] = '⌘';
+&nbsp;
+LABELS[ENTITY_TYPE.LINK] = '🔗';
+LABELS[ENTITY_TYPE.IMAGE] = '🖼';
+LABELS[ENTITY_TYPE.HORIZONTAL_RULE] = '―';
+LABELS[BR_TYPE] = '↵';
+&nbsp;
+LABELS[UNDO_TYPE] = '↺';
+LABELS[REDO_TYPE] = '↻';
+&nbsp;
+export const DESCRIPTIONS = {};
+&nbsp;
+DESCRIPTIONS[BLOCK_TYPE.UNSTYLED] = 'Paragraph';
+DESCRIPTIONS[BLOCK_TYPE.HEADER_ONE] = 'Heading 1';
+DESCRIPTIONS[BLOCK_TYPE.HEADER_TWO] = 'Heading 2';
+DESCRIPTIONS[BLOCK_TYPE.HEADER_THREE] = 'Heading 3';
+DESCRIPTIONS[BLOCK_TYPE.HEADER_FOUR] = 'Heading 4';
+DESCRIPTIONS[BLOCK_TYPE.HEADER_FIVE] = 'Heading 5';
+DESCRIPTIONS[BLOCK_TYPE.HEADER_SIX] = 'Heading 6';
+DESCRIPTIONS[BLOCK_TYPE.UNORDERED_LIST_ITEM] = 'Bulleted list';
+DESCRIPTIONS[BLOCK_TYPE.ORDERED_LIST_ITEM] = 'Numbered list';
+DESCRIPTIONS[BLOCK_TYPE.BLOCKQUOTE] = 'Blockquote';
+DESCRIPTIONS[BLOCK_TYPE.CODE] = 'Code block';
+&nbsp;
+DESCRIPTIONS[INLINE_STYLE.BOLD] = 'Bold';
+DESCRIPTIONS[INLINE_STYLE.ITALIC] = 'Italic';
+DESCRIPTIONS[INLINE_STYLE.CODE] = 'Code';
+DESCRIPTIONS[INLINE_STYLE.UNDERLINE] = 'Underline';
+DESCRIPTIONS[INLINE_STYLE.STRIKETHROUGH] = 'Strikethrough';
+DESCRIPTIONS[INLINE_STYLE.MARK] = 'Highlight';
+DESCRIPTIONS[INLINE_STYLE.QUOTATION] = 'Inline quotation';
+DESCRIPTIONS[INLINE_STYLE.SMALL] = 'Small';
+DESCRIPTIONS[INLINE_STYLE.SAMPLE] = 'Program output';
+DESCRIPTIONS[INLINE_STYLE.INSERT] = 'Inserted';
+DESCRIPTIONS[INLINE_STYLE.DELETE] = 'Deleted';
+DESCRIPTIONS[INLINE_STYLE.KEYBOARD] = 'Shortcut key';
+DESCRIPTIONS[INLINE_STYLE.SUPERSCRIPT] = 'Superscript';
+DESCRIPTIONS[INLINE_STYLE.SUBSCRIPT] = 'Subscript';
+&nbsp;
+DESCRIPTIONS[ENTITY_TYPE.LINK] = 'Link';
+DESCRIPTIONS[ENTITY_TYPE.IMAGE] = 'Image';
+DESCRIPTIONS[ENTITY_TYPE.HORIZONTAL_RULE] = 'Horizontal line';
+&nbsp;
+DESCRIPTIONS[BR_TYPE] = 'Line break';
+&nbsp;
+DESCRIPTIONS[UNDO_TYPE] = 'Undo';
+DESCRIPTIONS[REDO_TYPE] = 'Redo';
+&nbsp;
+export const KEYBOARD_SHORTCUTS = {};
+&nbsp;
+KEYBOARD_SHORTCUTS[BLOCK_TYPE.UNSTYLED] = '⌫';
+KEYBOARD_SHORTCUTS[BLOCK_TYPE.HEADER_ONE] = '#';
+KEYBOARD_SHORTCUTS[BLOCK_TYPE.HEADER_TWO] = '##';
+KEYBOARD_SHORTCUTS[BLOCK_TYPE.HEADER_THREE] = '###';
+KEYBOARD_SHORTCUTS[BLOCK_TYPE.HEADER_FOUR] = '####';
+KEYBOARD_SHORTCUTS[BLOCK_TYPE.HEADER_FIVE] = '#####';
+KEYBOARD_SHORTCUTS[BLOCK_TYPE.HEADER_SIX] = '######';
+KEYBOARD_SHORTCUTS[BLOCK_TYPE.UNORDERED_LIST_ITEM] = '-';
+KEYBOARD_SHORTCUTS[BLOCK_TYPE.ORDERED_LIST_ITEM] = '1.';
+KEYBOARD_SHORTCUTS[BLOCK_TYPE.BLOCKQUOTE] = '&gt;';
+KEYBOARD_SHORTCUTS[BLOCK_TYPE.CODE] = '```';
+&nbsp;
+KEYBOARD_SHORTCUTS[INLINE_STYLE.BOLD] = { other: 'Ctrl + B', macOS: '⌘ + B' };
+KEYBOARD_SHORTCUTS[INLINE_STYLE.ITALIC] = { other: 'Ctrl + I', macOS: '⌘ + I' };
+KEYBOARD_SHORTCUTS[INLINE_STYLE.UNDERLINE] = {
+    other: 'Ctrl + U',
+    macOS: '⌘ + U',
+};
+KEYBOARD_SHORTCUTS[INLINE_STYLE.STRIKETHROUGH] = {
+    other: 'Ctrl + ⇧ + X',
+    macOS: '⌘ + ⇧ + X',
+};
+KEYBOARD_SHORTCUTS[INLINE_STYLE.SUPERSCRIPT] = {
+    other: 'Ctrl + .',
+    macOS: '⌘ + .',
+};
+KEYBOARD_SHORTCUTS[INLINE_STYLE.SUBSCRIPT] = {
+    other: 'Ctrl + ,',
+    macOS: '⌘ + ,',
+};
+&nbsp;
+KEYBOARD_SHORTCUTS[ENTITY_TYPE.LINK] = { other: 'Ctrl + K', macOS: '⌘ + K' };
+&nbsp;
+KEYBOARD_SHORTCUTS[BR_TYPE] = '⇧ + ↵';
+KEYBOARD_SHORTCUTS[ENTITY_TYPE.HORIZONTAL_RULE] = '- - -';
+&nbsp;
+KEYBOARD_SHORTCUTS[UNDO_TYPE] = { other: 'Ctrl + Z', macOS: '⌘ + Z' };
+KEYBOARD_SHORTCUTS[REDO_TYPE] = { other: 'Ctrl + ⇧ + Z', macOS: '⌘ + ⇧ + Z' };
+&nbsp;
+export const HANDLED = 'handled';
+export const NOT_HANDLED = 'not-handled';
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Mar 27 2018 06:02:01 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
