@@ -1469,6 +1469,7 @@ var DraftailEditor = function (_Component) {
                 enableLineBreak = _props.enableLineBreak,
                 blockTypes = _props.blockTypes,
                 inlineStyles = _props.inlineStyles,
+                inlineStylesExtra = _props.inlineStylesExtra,
                 entityTypes = _props.entityTypes;
             var editorState = this.state.editorState;
 
@@ -1481,7 +1482,7 @@ var DraftailEditor = function (_Component) {
                     enableHorizontalRule: enableHorizontalRule,
                     enableLineBreak: enableLineBreak,
                     blockTypes: blockTypes,
-                    inlineStyles: inlineStyles,
+                    inlineStyles: inlineStyles.concat(inlineStylesExtra),
                     entityTypes: entityTypes
                 }, filteredState);
             }
@@ -1920,6 +1921,7 @@ var DraftailEditor = function (_Component) {
                 ariaDescribedBy = _props3.ariaDescribedBy,
                 blockTypes = _props3.blockTypes,
                 inlineStyles = _props3.inlineStyles,
+                inlineStylesExtra = _props3.inlineStylesExtra,
                 entityTypes = _props3.entityTypes,
                 controls = _props3.controls,
                 maxListNesting = _props3.maxListNesting;
@@ -1957,7 +1959,7 @@ var DraftailEditor = function (_Component) {
                     onChange: this.onChange
                 }),
                 React__default.createElement(draftJs.Editor, {
-                    customStyleMap: behavior.getCustomStyleMap(inlineStyles),
+                    customStyleMap: behavior.getCustomStyleMap(inlineStyles.concat(inlineStylesExtra)),
                     ref: function ref(_ref) {
                         _this4.editorRef = _ref;
                     },
@@ -2033,6 +2035,8 @@ DraftailEditor.defaultProps = {
     blockTypes: [],
     // List of the available inline styles.
     inlineStyles: [],
+    // List of inline styles with no automatic button.
+    inlineStylesExtra: [],
     // List of the available entity types.
     entityTypes: [],
     // List of active decorators.
@@ -2110,6 +2114,12 @@ process.env.NODE_ENV !== "production" ? DraftailEditor.propTypes = {
         description: PropTypes.string,
         // Represents the inline style in the editor UI.
         icon: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string), PropTypes.node]),
+        // CSS properties (in JS format) to apply for styling within the editor area.
+        style: PropTypes.Object
+    })),
+    inlineStylesExtra: PropTypes.arrayOf(PropTypes.shape({
+        // Unique type shared between inline style instances.
+        type: PropTypes.string.isRequired,
         // CSS properties (in JS format) to apply for styling within the editor area.
         style: PropTypes.Object
     })),
