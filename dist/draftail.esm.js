@@ -1461,6 +1461,7 @@ var DraftailEditor = function (_Component) {
                 enableHorizontalRule = _props.enableHorizontalRule,
                 enableLineBreak = _props.enableLineBreak,
                 blockTypes = _props.blockTypes,
+                blockTypesExtra = _props.blockTypesExtra,
                 inlineStyles = _props.inlineStyles,
                 inlineStylesExtra = _props.inlineStylesExtra,
                 entityTypes = _props.entityTypes;
@@ -1474,7 +1475,7 @@ var DraftailEditor = function (_Component) {
                     maxListNesting: maxListNesting,
                     enableHorizontalRule: enableHorizontalRule,
                     enableLineBreak: enableLineBreak,
-                    blockTypes: blockTypes,
+                    blockTypes: blockTypes.concat(blockTypesExtra),
                     inlineStyles: inlineStyles.concat(inlineStylesExtra),
                     entityTypes: entityTypes
                 }, filteredState);
@@ -1913,6 +1914,7 @@ var DraftailEditor = function (_Component) {
                 autoCorrect = _props3.autoCorrect,
                 ariaDescribedBy = _props3.ariaDescribedBy,
                 blockTypes = _props3.blockTypes,
+                blockTypesExtra = _props3.blockTypesExtra,
                 inlineStyles = _props3.inlineStyles,
                 inlineStylesExtra = _props3.inlineStylesExtra,
                 entityTypes = _props3.entityTypes,
@@ -1976,7 +1978,7 @@ var DraftailEditor = function (_Component) {
                     onBlur: this.onBlur,
                     onTab: this.onTab,
                     blockRendererFn: this.blockRenderer,
-                    blockRenderMap: behavior.getBlockRenderMap(blockTypes),
+                    blockRenderMap: behavior.getBlockRenderMap(blockTypes.concat(blockTypesExtra)),
                     blockStyleFn: behavior.blockStyleFn
                 }),
                 this.renderSource(),
@@ -2095,6 +2097,12 @@ process.env.NODE_ENV !== "production" ? DraftailEditor.propTypes = {
         description: PropTypes.string,
         // Represents the block in the editor UI.
         icon: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string), PropTypes.node]),
+        // DOM element used to display the block within the editor area.
+        element: PropTypes.string
+    })),
+    blockTypesExtra: PropTypes.arrayOf(PropTypes.shape({
+        // Unique type shared between block instances.
+        type: PropTypes.string.isRequired,
         // DOM element used to display the block within the editor area.
         element: PropTypes.string
     })),
