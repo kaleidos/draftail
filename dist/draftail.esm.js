@@ -302,6 +302,11 @@ var DraftUtils = {
     getSelectionEntity: function getSelectionEntity(editorState) {
         var entity = void 0;
         var selection = editorState.getSelection();
+
+        if (selection.getStartKey() !== selection.getEndKey()) {
+            return undefined;
+        }
+
         var start = selection.getStartOffset();
         var end = selection.getEndOffset();
         if (start === end && start === 0) {
@@ -335,20 +340,27 @@ var DraftUtils = {
         var selectionState = editorState.getSelection();
         var block = this.getSelectedBlock(editorState);
         var entityRange = void 0;
-        // https://github.com/jpuri/draftjs-utils/blob/e81c0ae19c3b0fdef7e0c1b70d924398956be126/js/inline.js#L111
-        block.findEntityRanges(function (value) {
-            return value.get('entity') === entityKey;
-        }, function (start, end) {
-            entityRange = {
-                start: start,
-                end: end
-            };
-        });
 
-        return selectionState.merge({
-            anchorOffset: entityRange.start,
-            focusOffset: entityRange.end
-        });
+        if (entityKey) {
+            // https://github.com/jpuri/draftjs-utils/blob/e81c0ae19c3b0fdef7e0c1b70d924398956be126/js/inline.js#L111
+            block.findEntityRanges(function (value) {
+                return value.get('entity') === entityKey;
+            }, function (start, end) {
+                entityRange = {
+                    start: start,
+                    end: end
+                };
+            });
+        }
+
+        if (entityRange) {
+            return selectionState.merge({
+                anchorOffset: entityRange.start,
+                focusOffset: entityRange.end
+            });
+        } else {
+            return selectionState;
+        }
     },
 
 
