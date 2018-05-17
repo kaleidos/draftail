@@ -942,7 +942,20 @@ var createClass = function () {
 
 
 
+var defineProperty = function (obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
 
+  return obj;
+};
 
 var _extends = Object.assign || function (target) {
   for (var i = 1; i < arguments.length; i++) {
@@ -1423,6 +1436,7 @@ var DraftailEditor = function (_Component) {
         _this.onTab = _this.onTab.bind(_this);
         _this.handleKeyCommand = _this.handleKeyCommand.bind(_this);
         _this.handleBeforeInput = _this.handleBeforeInput.bind(_this);
+        _this.handlePastedText = _this.handlePastedText.bind(_this);
 
         _this.toggleBlockType = _this.toggleBlockType.bind(_this);
         _this.toggleInlineStyle = _this.toggleInlineStyle.bind(_this);
@@ -1689,6 +1703,27 @@ var DraftailEditor = function (_Component) {
             }
 
             return NOT_HANDLED;
+        }
+    }, {
+        key: 'handlePastedText',
+        value: function handlePastedText(text, html, editorState) {
+            var editorKey = this.editorRef.getEditorKey();
+            var isEditor = html.includes('data-editor');
+            var htmlKey = isEditor ? /data-editor="(\w+)"/.exec(html)[1] : '';
+
+            if (!htmlKey || htmlKey === editorKey || !window.editorRefs[htmlKey]) {
+                return false;
+            }
+
+            var clipboard = window.editorRefs[htmlKey].getClipboard();
+
+            if (clipboard) {
+                var newContent = Modifier.replaceWithFragment(editorState.getCurrentContent(), editorState.getSelection(), clipboard);
+                this.onChange(EditorState.push(editorState, newContent, 'insert-fragment'));
+                return true;
+            }
+
+            return false;
         }
     }, {
         key: 'toggleBlockType',
@@ -1976,6 +2011,9 @@ var DraftailEditor = function (_Component) {
                     customStyleMap: behavior.getCustomStyleMap(inlineStyles.concat(inlineStylesExtra)),
                     ref: function ref(_ref) {
                         _this4.editorRef = _ref;
+                        if (_ref) {
+                            window.editorRefs = Object.assign({}, window.editorRefs, defineProperty({}, _ref.getEditorKey(), _ref));
+                        }
                     },
                     editorState: editorState,
                     onChange: this.onChange,
@@ -1993,6 +2031,7 @@ var DraftailEditor = function (_Component) {
                     keyBindingFn: behavior.getKeyBindingFn(blockTypes, inlineStyles, entityTypes),
                     handleKeyCommand: this.handleKeyCommand,
                     handleBeforeInput: this.handleBeforeInput,
+                    handlePastedText: this.handlePastedText,
                     onFocus: this.onFocus,
                     onBlur: this.onBlur,
                     onTab: this.onTab,
