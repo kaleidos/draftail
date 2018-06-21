@@ -361,10 +361,17 @@ var DraftUtils = {
         }
 
         if (entityRange) {
-            return selectionState.merge({
-                anchorOffset: entityRange.start,
-                focusOffset: entityRange.end
-            });
+            if (!selectionState.isBackward) {
+                return selectionState.merge({
+                    anchorOffset: entityRange.start,
+                    focusOffset: entityRange.end
+                });
+            } else {
+                return selectionState.merge({
+                    anchorOffset: entityRange.end,
+                    focusOffset: entityRange.start
+                });
+            }
         } else {
             return selectionState;
         }
