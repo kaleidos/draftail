@@ -1708,7 +1708,7 @@ var DraftailEditor = function (_Component) {
         key: 'handlePastedText',
         value: function handlePastedText(text, html, editorState) {
             var editorKey = this.editorRef.getEditorKey();
-            var isEditor = html.includes('data-editor');
+            var isEditor = html && html.includes('data-editor');
             var htmlKey = isEditor ? /data-editor="(\w+)"/.exec(html)[1] : '';
 
             if (!htmlKey || htmlKey === editorKey || !window.editorRefs[htmlKey]) {
