@@ -18,6 +18,11 @@ exports[`ToolbarDefaults #blockTypes 1`] = `
         "label": "Test 3",
         "type": "TEST_3",
       },
+      Object {
+        "hideControl": true,
+        "label": "Test 4",
+        "type": "TEST_4",
+      },
     ]
   }
   currentBlock="unstyled"
@@ -479,6 +484,11 @@ exports[`ToolbarDefaults #entityTypes 1`] = `
         "label": "Test 3",
         "type": "TEST_3",
       },
+      Object {
+        "hideControl": true,
+        "label": "Test 4",
+        "type": "TEST_4",
+      },
     ]
   }
   inlineStyles={Array []}
@@ -613,6 +623,11 @@ exports[`ToolbarDefaults #inlineStyles 1`] = `
       Object {
         "label": "Test 3",
         "type": "TEST_3",
+      },
+      Object {
+        "hideControl": true,
+        "label": "Test 4",
+        "type": "TEST_4",
       },
     ]
   }
